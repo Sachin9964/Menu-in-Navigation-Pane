@@ -1,7 +1,7 @@
 pageextension 50149 ExtendNvigationArea extends "Order Processor Role Center"
 {
     actions
-    {
+    {   /*
         //Top-Level Navigation
         addlast(Sections)
         {
@@ -23,8 +23,10 @@ pageextension 50149 ExtendNvigationArea extends "Order Processor Role Center"
                     ApplicationArea = All;
                 }
             }
-        }
-        //Second-Level Navigation
+        } 
+        */
+        // Or Second-Level Navigation
+        /*
         addlast(Embedding)
         {
             action("Sales cycles")
@@ -33,30 +35,48 @@ pageextension 50149 ExtendNvigationArea extends "Order Processor Role Center"
                 ApplicationArea = All;
             }
         }
-        //Adding Actions
+        */
+        // Or Adding Actions
+        
         addlast(Creation)
         {
             action("Sales Journal")
             {
+                //Image = Journal;
                 RunObject = page "Sales Journal";
                 ApplicationArea = All;
             }
         }
+        
+        /*
         addlast(Processing)
         {
             group(Documents)
             {
                 action("Sales Document Entity")
                 {
+                    Image = Sales;
                     RunObject = page "Sales Document Entity";
                     ApplicationArea  = All;
                 }
                 action("Sales Document Line Entity")
                 {
+                    Image = Document;
                     RunObject = page "Sales Document Line Entity";
                     ApplicationArea = All;
                 }
             }
         }
+        /*
+        /*
+        addlast(Reporting)
+        {
+            action("Customer Statistic")
+            {
+                RunObject = report "Sales Statistics";
+                ApplicationArea = All;
+            }
+        }
+        */
     }
 }
